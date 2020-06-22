@@ -64,6 +64,7 @@ export class RestaurantAddComponent implements OnInit, OnDestroy {
         this.ngxLoader.stop();
       } 
     }
+    
   }
 
 
