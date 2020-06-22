@@ -12,6 +12,10 @@
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/grid';
 
+@import "../../../assets//css/global.css";
+@import "../../../assets//libs/bootstrap/css/bootstrap.css";
+
+
 // loading progress bar theme
 @import './pace.theme';
 

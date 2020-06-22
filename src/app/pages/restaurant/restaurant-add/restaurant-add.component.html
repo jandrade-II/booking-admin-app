@@ -1,0 +1,90 @@
+<div class="row">
+    <div class="col-md-12">
+      <nb-card>
+        <nb-card-header>Add Restaurant</nb-card-header>
+         <nb-card-body>
+          <form [formGroup]="restaurantForm">
+  
+            <div class="form-group row">
+              <label for="inputEmail1" class="label col-sm-3 col-form-label">Restaurant Name</label>
+              <div class="col-sm-9">
+                <input type="text" nbInput fullWidth  placeholder="Restaurant Name"
+                formControlName="restaurantName"  [ngClass]="{ error: isValid('restaurantName') }">
+              </div>
+            </div>
+  
+            <div class="form-group row">
+              <label for="inputEmail1" class="label col-sm-3 col-form-label">Restaurant Description</label>
+              <div class="col-sm-9">
+                <input type="text" nbInput fullWidth  placeholder="Restaurant Description"
+                formControlName="restaurantDescription"  [ngClass]="{ error: isValid('restaurantDescription') }">
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="inputEmail1" class="label col-sm-3 col-form-label">Restaurant Adress</label>
+                <div class="col-sm-9">
+                  <input type="text" nbInput fullWidth  placeholder="Restaurant Adress"
+                  formControlName="address"  [ngClass]="{ error: isValid('address') }">
+                </div>
+            </div>
+      
+          
+  
+  
+            <div class="form-group row">
+              <label for="inputEmail1" class="label col-sm-3 col-form-label">Restaurant Contact No.</label>
+              <div class="col-sm-9">
+                <input type="number" nbInput fullWidth  placeholder="Restaurant Contact No."
+                formControlName="restaurantContactNo"  [ngClass]="{ error: isValid('restaurantContactNo') }">
+              </div>
+            </div>
+  
+         
+  
+            <div class="form-group row">
+              <label for="inputPassword2" class="label col-sm-3 col-form-label">Email</label>
+              <div class="col-sm-9">
+                <input type="email" nbInput fullWidth id="inputPassword2" placeholder="Email" 
+                formControlName="email"
+                [ngClass]="{ error: isValid('email') }">
+              </div>
+            </div>
+  
+  
+            <div class="form-group row">
+              <label for="inputPassword2" class="label col-sm-3 col-form-label">Password</label>
+              <div class="col-sm-9">
+                <input type="password" nbInput fullWidth id="inputPassword2" placeholder="Password" 
+                formControlName="password"
+                [ngClass]="{ error: isValid('password') }">
+              </div>
+            </div>
+  
+            <div class="form-group row">
+              <label for="inputPassword2" class="label col-sm-3 col-form-label">Confirm Password</label>
+              <div class="col-sm-9">
+                <input type="password" nbInput fullWidth id="inputPassword2" placeholder="Confirm Password" 
+                formControlName="confirm_password" 
+                [ngClass]="{ error: isValid('confirm_password') }">
+                <div *ngIf="restaurantForm.errors?.mismatchedFields" class="invalid">
+                  <div>Passwords do not match</div>
+              </div>
+              </div>
+            </div>
+
+            <br/>
+            <br/>
+
+         
+            <div class="form-group row">
+              <div class="offset-sm-3 col-sm-9">
+                <button type="submit" nbButton status="primary" (click)="createRestaurant()">Create Restaurant</button>
+              </div>
+            </div>
+          </form>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>

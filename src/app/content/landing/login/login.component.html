@@ -1,0 +1,25 @@
+
+<div class="ms-login-wrapper">
+    <img src="assets/images/logo.png" class="ms-login-logo">
+    <div class="ms-admin-login-label">Booking Admin</div>
+    <form  [formGroup]="loginForm" novalidate>
+        <div>
+            <input 
+                type="email"
+                class="form-control ms-form"
+                placeholder="Email Address"  
+                formControlName="email" 
+                [ngClass]="{ error: isValid('email') }">
+                <error-message   *ngIf="isValid('email')" [errorMsg] = "'Email must be Valid'" > </error-message>
+            <input 
+                class="form-control ms-form" 
+                type="password" 
+                formControlName="password" 
+                placeholder="Password" 
+                [ngClass]="{ error: isValid('password') }">
+                <error-message   *ngIf="isValid('password')" [errorMsg] = "'Password must be Valid'" > </error-message>
+            <hr>
+            <button class="ms-btn ms-btn-tertiary ms-full-width" (click)="login()" [disabled]="!loginForm.valid" >Login</button>
+        </div>
+    </form>
+  </div>

@@ -15,6 +15,11 @@ const routes: Routes = [{
       component: ECommerceComponent,
     },
     {
+      path: 'restaurant',
+      loadChildren: () => import('./restaurant/restaurant.module')
+      .then(m => m.RestaurantModule),
+    },
+    {
       path: 'iot-dashboard',
       component: DashboardComponent,
     },
